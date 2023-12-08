@@ -1,0 +1,11 @@
+<xsml version="1.0">
+  <head>
+    <title>JSAR Widget</title>
+    <link id="model" rel="mesh" type="octstream/glb" href="./model/welcome.glb" />
+    <script src="./lib/main.ts"></script>
+  </head>
+  <space>
+    <mesh id="model" ref="model" selector="__root__" />
+  </space>
+</xsml>
+
