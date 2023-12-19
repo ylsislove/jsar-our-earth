@@ -3,13 +3,80 @@
     <title>Our Earth</title>
     <link id="sun" rel="mesh" type="octstream/glb" href="./model/sun.glb" />
     <script src="./lib/main.ts"></script>
+    <script src="./lib/gui.ts"></script>
     <style>
+      @material white {
+        diffuse-color: #ffffff;
+        backface-culling: false;
+        side-orientation: doubleside;
+      }
+      @material red {
+        diffuse-color: red;
+        backface-culling: false;
+        side-orientation: doubleside;
+      }
+      @material green {
+        diffuse-color: green;
+        backface-culling: false;
+        side-orientation: doubleside;
+      }
+      @material blue {
+        diffuse-color: blue;
+        backface-culling: false;
+        side-orientation: doubleside;
+      }
+      @material whiteBg {
+        diffuse-color: #ffffff;
+        backface-culling: false;
+        side-orientation: doubleside;
+      }
       #sun {
         rotation: 90 0 0;
       }
       #earth {
-        position: 0 0 30;
+        position: 30 0 0;
         rotation: 23.5 -90 0;
+      }
+      #ctrlPanel {
+        position: 45 0 10;
+        rotation: 0 150 0;
+        scaling: 16 16 1;
+      }
+      #spring {
+        position: 0 0 -30;
+        material: "white";
+      }
+      #springText {
+        position: 0 0 0;
+        rotation: 0 180 0;
+        scaling: 20 20 1;
+      }
+      #summer {
+        position: 30 0 0;
+        material: "white";
+      }
+      #summerText {
+        position: 0 0 0;
+        rotation: 0 180 0;
+        scaling: 20 20 1;
+      }
+      #autumn {
+        position: 0 0 30;
+        material: "white";
+      }
+      #autumnText {
+        position: 0 0 0;
+        rotation: 0 180 0;
+        scaling: 20 20 1;
+      }
+      #winter {
+        position: -30 0 0;
+        material: "white";
+      }
+      #winterText {
+        position: 0 0 0;
+        rotation: 0 180 0;
+        scaling: 20 20 1;
       }
     </style>
   </head>
@@ -17,8 +84,91 @@
     <mesh id="sun" ref="sun" selector="__root__" />
     <sphere id="earth" diameter="6">
       <cylinder id="earthAxis" diameter="0.2" height="8" />
-      <disc id="earthEquatorPlane" radius="6" />
+    </sphere>
+    <plane id="ctrlPanel">
+      <div id="root" style="
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ">
+        <div style="
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 80%;
+        height: 60%;
+        background-color: #ffffff0f;
+        border: 1px solid #ffffff;
+        border-radius: 50px;
+        ">
+          <span class="sub">公转语音讲解</span>
+          <span class="sub">自转语音讲解</span>
+        </div>
+      </div>
+    </plane>
+    <sphere id="spring" diameter="1">
+      <plane id="springText">
+        <div id="root" style="display:flex;align-items:center;justify-content:center;">
+          <div style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          height: 40%;
+          ">
+            <span class="sub">春分</span>
+            <span class="sub">3月21日前后</span>
+          </div>
+        </div>
+      </plane>
+    </sphere>
+    <sphere id="summer" diameter="1">
+      <plane id="summerText">
+        <div id="root" style="display:flex;align-items:center;justify-content:center;">
+          <div style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          height: 40%;
+          ">
+            <span class="sub">夏至</span>
+            <span class="sub">6月22日前后</span>
+          </div>
+        </div>
+      </plane>
+    </sphere>
+    <sphere id="autumn" diameter="1">
+      <plane id="autumnText">
+        <div id="root" style="display:flex;align-items:center;justify-content:center;">
+          <div style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          height: 40%;
+          ">
+            <span class="sub">秋分</span>
+            <span class="sub">9月23日前后</span>
+          </div>
+        </div>
+      </plane>
+    </sphere>
+    <sphere id="winter" diameter="1">
+      <plane id="winterText">
+        <div id="root" style="display:flex;align-items:center;justify-content:center;">
+          <div style="
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          width: 100%;
+          height: 40%;
+          ">
+            <span class="sub">冬至</span>
+            <span class="sub">12月22日前后</span>
+          </div>
+        </div>
+      </plane>
     </sphere>
   </space>
 </xsml>
-

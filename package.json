@@ -10,7 +10,8 @@
     "main.xsml",
     "lib/*.ts",
     "texture/*",
-    "model/sun.glb"
+    "model/sun.glb",
+    "audio/*"
   ],
   "icon3d": {
     "base": "./model/sun.glb"
