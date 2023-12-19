@@ -1,22 +1,23 @@
 {
-  "name": "your-jsar-widget-name",
-  "displayName": "Display Name",
+  "name": "jsar-our-earth",
+  "displayName": "我们的地球",
   "version": "1.0.0",
-  "description": "The template widget",
+  "description": "Our earth",
   "main": "main.xsml",
   "scripts": {},
   "files": [
     "icon.png",
     "main.xsml",
     "lib/*.ts",
-    "model/welcome.glb"
+    "texture/*",
+    "model/sun.glb"
   ],
   "icon3d": {
-    "base": "./model/welcome.glb"
+    "base": "./model/sun.glb"
   },
-  "author": "Yorkie Liu <yorkiefixer@gmail.com>",
-  "license": "Apache-2.0",
+  "author": "Wang Yu <wangyu0814@foxmail.com>",
+  "license": "MIT",
   "devDependencies": {
-    "@yodaos-jsar/types": "^0.2.1-rc0"
+    "@yodaos-jsar/types": "^1.4.0"
   }
 }

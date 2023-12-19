@@ -1,11 +1,24 @@
 <xsml version="1.0">
   <head>
-    <title>JSAR Widget</title>
-    <link id="model" rel="mesh" type="octstream/glb" href="./model/welcome.glb" />
+    <title>Our Earth</title>
+    <link id="sun" rel="mesh" type="octstream/glb" href="./model/sun.glb" />
     <script src="./lib/main.ts"></script>
+    <style>
+      #sun {
+        rotation: 90 0 0;
+      }
+      #earth {
+        position: 0 0 30;
+        rotation: 23.5 -90 0;
+      }
+    </style>
   </head>
   <space>
-    <mesh id="model" ref="model" selector="__root__" />
+    <mesh id="sun" ref="sun" selector="__root__" />
+    <sphere id="earth" diameter="6">
+      <cylinder id="earthAxis" diameter="0.2" height="8" />
+      <disc id="earthEquatorPlane" radius="6" />
+    </sphere>
   </space>
 </xsml>
 
