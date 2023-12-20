@@ -75,7 +75,7 @@ scene.registerBeforeRender(function () {
 
 async function createAudioPlayer(name: string) {
   const arrayBuffer = await import(`../audio/${name}`);
-  const blob = new Blob([arrayBuffer], { type: 'audio/mpeg' });
+  const blob = new Blob([arrayBuffer], { type: 'audio/wav' });
   const objectUrl = URL.createObjectURL(blob);
   return (volume?: number) => {
     const audio = new Audio(objectUrl);
@@ -88,8 +88,8 @@ async function createAudioPlayer(name: string) {
 
 const audios = {} as Record<string, (volume?: number) => void>;
 (async function() {
-  audios['earthOrbit'] = await createAudioPlayer('earthOrbit.mp3');
-  audios['earthRotation'] = await createAudioPlayer('earthRotation.mp3');
+  audios['earthOrbit'] = await createAudioPlayer('earthOrbit.wav');
+  audios['earthRotation'] = await createAudioPlayer('earthRotation.wav');
 })();
 
 // 控制面板监听事件处理函数
@@ -100,7 +100,7 @@ export function ctrlPanelListener(params: any) {
     case '公转语音讲解':
       playEarthOrbitAudio()
       break;
-    case '自转语音讲解':
+    case '试试右手握拳':
       playEarthRotationAudio()
       break;
     default:
@@ -116,7 +116,7 @@ function playEarthOrbitAudio() {
     // 58s后停止播放
     setTimeout(() => {
       isEarthOrbitAudioPlaying = false;
-    }, 58000);
+    }, 50000);
   }
 }
 
@@ -128,7 +128,7 @@ function playEarthRotationAudio() {
     // 47s后停止播放
     setTimeout(() => {
       isEarthRotationAudioPlaying = false;
-    }, 47000);
+    }, 31000);
   }
 }
 

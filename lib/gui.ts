@@ -12,11 +12,11 @@ function clg(params:any) {
     console.log('ylsislove', params);
 }
 
-setOrbitTextStyle('springText')
-setOrbitTextStyle('summerText')
-setOrbitTextStyle('autumnText')
-setOrbitTextStyle('winterText')
-function setOrbitTextStyle(id: string) {
+setOrbitTextStyleTextCenter('springText')
+setOrbitTextStyleTextRight('summerText')
+setOrbitTextStyleTextCenter('autumnText')
+setOrbitTextStyleTextLeft('winterText')
+function setOrbitTextStyleTextCenter(id: string) {
     const autumnText = spaceDocument.getSpatialObjectById(id);
     const autumnTextRoot = autumnText.shadowRoot;
     const autumnTextRootChildren = autumnTextRoot.querySelectorAll('.sub');
@@ -27,6 +27,32 @@ function setOrbitTextStyle(id: string) {
         subElement.style.fontSize = '80px';
         subElement.style.color = '#ffffff';
         subElement.style.textAlign = 'center';
+    }
+}
+function setOrbitTextStyleTextRight(id: string) {
+    const autumnText = spaceDocument.getSpatialObjectById(id);
+    const autumnTextRoot = autumnText.shadowRoot;
+    const autumnTextRootChildren = autumnTextRoot.querySelectorAll('.sub');
+    for (let sub of autumnTextRootChildren) {
+        const subElement = sub as HTMLElement;
+        subElement.style.height = '200px';
+        subElement.style.width = '100%';
+        subElement.style.fontSize = '80px';
+        subElement.style.color = '#ffffff';
+        subElement.style.textAlign = 'right';
+    }
+}
+function setOrbitTextStyleTextLeft(id: string) {
+    const autumnText = spaceDocument.getSpatialObjectById(id);
+    const autumnTextRoot = autumnText.shadowRoot;
+    const autumnTextRootChildren = autumnTextRoot.querySelectorAll('.sub');
+    for (let sub of autumnTextRootChildren) {
+        const subElement = sub as HTMLElement;
+        subElement.style.height = '200px';
+        subElement.style.width = '100%';
+        subElement.style.fontSize = '80px';
+        subElement.style.color = '#ffffff';
+        subElement.style.textAlign = 'left';
     }
 }
 
