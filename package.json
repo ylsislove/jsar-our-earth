@@ -1,7 +1,7 @@
 {
   "name": "jsar-our-earth",
   "displayName": "我们的地球",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Our earth",
   "main": "main.xsml",
   "scripts": {},
