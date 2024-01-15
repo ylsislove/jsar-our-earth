@@ -13,7 +13,7 @@ export async function getEarthPlaneMat() {
     // 地球赤道面材质
     const material = new BABYLON.StandardMaterial('matEarthPlane', spaceDocument.scene);
     material.diffuseColor = new BABYLON.Color3(0, 0, 1);
-    material.alpha = 0.1;
+    material.alpha = 0.5;
     material.transparencyMode = BABYLON.Material.MATERIAL_ALPHABLEND;
     // 返回材质
     return material;
@@ -23,7 +23,7 @@ export async function getEarthOrbitPlaneMat() {
     // 地球公转黄道面材质
     const material = new BABYLON.StandardMaterial('matEarthOrbitPlane', spaceDocument.scene);
     material.diffuseColor = new BABYLON.Color3(1, 1, 0);
-    material.alpha = 0.1;
+    material.alpha = 0.5;
     material.transparencyMode = BABYLON.Material.MATERIAL_ALPHABLEND;
     // 返回材质
     return material;

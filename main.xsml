@@ -32,7 +32,7 @@
       #startText {
         position: 0 20 40;
         rotation: 0 180 0;
-        scaling: 25 25 1;
+        scaling: 40 40 1;
       }
       #sun {
         rotation: 90 0 0;
@@ -46,47 +46,47 @@
         material: "white";
       }
       #radLineText {
-        position: 12.5 6.5 0;
+        position: 14 6.5 0;
         rotation: 0 0 0;
-        scaling: 5 5 1;
+        scaling: 8 8 1;
       }
       #arcticText {
-        position: 2 10.5 0;
+        position: 1 10.5 0;
         rotation: 0 0 0;
-        scaling: 5 5 1;
+        scaling: 7 7 1;
       }
       #antarcicText {
-        position: -2 -10.5 0;
+        position: -1 -10.5 0;
         rotation: 0 0 0;
-        scaling: 5 5 1;
+        scaling: 7 7 1;
       }
       #earthAxisText {
-        position: 6 14 0;
+        position: 6 15 0;
         rotation: 0 0 0;
-        scaling: 5 5 1;
+        scaling: 7.5 7.5 1;
       }
       #ctrlPanel {
-        position: 48 0 0;
+        position: 60 0 0;
         rotation: 0 160 0;
-        scaling: 16 16 1;
+        scaling: 32 32 1;
       }
       #spring {
         position: 0 0 -30;
         material: "white";
       }
       #springText {
-        position: 0 5 0;
+        position: 0 10 0;
         rotation: 0 180 0;
-        scaling: 10 10 1;
+        scaling: 25 25 1;
       }
       #summer {
         position: 30 0 0;
         material: "white";
       }
       #summerText {
-        position: 6 0 0;
+        position: 12 0 0;
         rotation: 0 180 0;
-        scaling: 10 10 1;
+        scaling: 20 20 1;
       }
       #autumn {
         position: 0 0 30;
@@ -95,16 +95,16 @@
       #autumnText {
         position: 0 0 0;
         rotation: 0 180 0;
-        scaling: 10 10 1;
+        scaling: 20 20 1;
       }
       #winter {
         position: -30 0 0;
         material: "white";
       }
       #winterText {
-        position: -6 0 0;
+        position: -12 0 0;
         rotation: 0 180 0;
-        scaling: 10 10 1;
+        scaling: 20 20 1;
       }
     </style>
   </head>
@@ -126,7 +126,7 @@
           为了方便演示，本程序对地球的大小和距太阳的距离进行了缩放。实际上：
 太阳的大小约为地球的110倍
 地球据太阳的距离约为地球直径的109倍
-          不要搞混了哦！
+          右手握拳开始自己的探索之旅吧~
         </span>
         </div>
       </div>
@@ -214,7 +214,7 @@
           justify-content: space-around;
           align-items: center;
           width: 100%;
-          height: 65%;
+          height: 60%;
           ">
             <span class="sub">春分</span>
             <span class="sub">3月21日前后</span>
@@ -230,7 +230,7 @@
           justify-content: space-around;
           align-items: center;
           width: 100%;
-          height: 80%;
+          height: 60%;
           ">
             <span class="sub">夏至</span>
             <span class="sub">6月22日前后</span>
@@ -262,7 +262,7 @@
           justify-content: space-around;
           align-items: center;
           width: 100%;
-          height: 80%;
+          height: 60%;
           ">
             <span class="sub">冬至</span>
             <span class="sub">12月22日前后</span>

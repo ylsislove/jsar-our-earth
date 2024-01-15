@@ -1,5 +1,6 @@
 import { getEarthMat, getEarthPlaneMat, getEarthOrbitPlaneMat } from './matManager';
-import { playEarthOrbitAudio, playEarthRotationAudio, playBgMusic } from "./audioManager";
+import { playExplainAudio, playBgMusic } from "./audioManager";
+import { initGesture } from "./gestureManager";
 
 // 模型
 const scene = spaceDocument.scene as BABYLON.Scene;
@@ -152,6 +153,7 @@ function switchEarthRotationDemo() {
     new BABYLON.Vector3(3, 3, 3),
     0, null, () => {
       radLineParent.scaling = new BABYLON.Vector3(1, 1, 1);   // 显示弧线
+      isAnimationPlaying = false;                             // 动画播放完毕
     }
   );
   // 地轴拉长
@@ -161,7 +163,7 @@ function switchEarthRotationDemo() {
     'animSwitchEarthRotationDemoCtrlPanelPosition', 
     ctrlPanel, 'position', framePerSecond, totalFrame,
     ctrlPanel.position,
-    new BABYLON.Vector3(30, 0, 20),
+    new BABYLON.Vector3(40, 0, 30),
     0
   );
 }
@@ -194,7 +196,8 @@ function switchEarthOrbitDemo() {
       summer.scaling = new BABYLON.Vector3(1, 1, 1);    // 显示夏天
       autumn.scaling = new BABYLON.Vector3(1, 1, 1);    // 显示秋天
       winter.scaling = new BABYLON.Vector3(1, 1, 1);    // 显示冬天
-      earthRotationSpeed = 1/2.4;          // 自转速度设为快
+      earthRotationSpeed = 1/2.4;             // 自转速度设为快
+      isAnimationPlaying = false;             // 动画播放完毕
     }
   );
   // 地轴恢复原始大小
@@ -204,7 +207,7 @@ function switchEarthOrbitDemo() {
     'animSwitchEarthOrbitDemoCtrlPanelPosition', 
     ctrlPanel, 'position', framePerSecond, totalFrame,
     ctrlPanel.position,
-    new BABYLON.Vector3(48, 0, 0),
+    new BABYLON.Vector3(60, 0, 0),
     0
   );
 }
@@ -212,7 +215,9 @@ function switchEarthOrbitDemo() {
 // 控制面板监听事件处理函数
 let isEarthOrbitMode = true;
 let isEarthRotationMode = false;
+let isAnimationPlaying = false;
 export function ctrlPanelListener(params: any) {
+  if (isAnimationPlaying) return;
   switch (params) {
     case 'start':
       playBgMusic();
@@ -221,21 +226,25 @@ export function ctrlPanelListener(params: any) {
       break;
     case '公转':
       if (!isEarthOrbitMode) {
+        isAnimationPlaying = true;
         switchEarthOrbitDemo();
         isEarthOrbitMode = true;
         isEarthRotationMode = false;
       }
-      playEarthOrbitAudio();
+      playExplainAudio();
       break;
     case '自转':
       if (!isEarthRotationMode) {
+        isAnimationPlaying = true;
         switchEarthRotationDemo();
         isEarthRotationMode = true;
         isEarthOrbitMode = false;
       }
-      playEarthRotationAudio();
+      playExplainAudio();
       break;
     default:
       break;
   }
 }
+
+initGesture(ctrlPanelListener);

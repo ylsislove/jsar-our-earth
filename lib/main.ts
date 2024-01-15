@@ -130,7 +130,3 @@ for (let sub of ctrlPanelRootChildren) {
         ctrlPanelListener(subElement.textContent);
     });
 }
-spaceDocument.watchInputEvent();
-
-
-
