@@ -1,20 +1,19 @@
-# template-for-jsar-widget
+# 我们的地球
+[真机演示](https://www.bilibili.com/video/BV1Kb4y1A72y/?vd_source=6d2641c487b0146cd347fcc006207303)
 
-The template repository for creating the JSAR Widget.
+## 作品介绍
+地球在宇宙中的运动是一个壮丽的舞蹈，而赤道面与黄道面则是这个舞蹈中的关键角色。赤道面，是地球自转的平面，将地球分为南北两个半球。而黄道面，则是地球绕太阳公转的平面。当这两个平面相遇时，它们之间形成了一个微妙的夹角。这个夹角，被称为黄赤交角。它的存在，使得太阳在地球上的直射点在一年内在赤道两侧来回移动，从而导致了四季的变化。
 
-## How to use
+在空间小程序中，来直观感受下地球运动的魅力吧~
 
-Create your GitHub repository via [this link](https://github.com/new?template_name=template-for-jsar-widget&template_owner=M-CreativeLab), this uses the template repository to create your repository.
+## 后期规划
 
-## Open
+想借助 Web 开发的优势，将 AI 功能融入进空间小程序中。空间小程序的定位是桌面组件，所以将地球当作地球仪摆放在桌子上岂不是很合理哈哈
 
-Type the following URL in JSAR runtime:
+既然作为一个桌面组件，我希望能有一种除了手势交互以外的，更自然的交互方式，那就是语音交互啦。
 
-```sh
-https://cdn.jsdelivr.net/gh/M-CreativeLab/template-for-jsar-widget@main/main.xsml
-```
+想象在工作闲暇之余，我可以对着地球说，最近世界各地有哪些好玩有趣的事发生呀，小破球就会通过 AI 自动帮我搜集信息，并进行总结，然后再借助文本转语音在线api生成音频，自动播放。这就是在 v1.3.0 版本想实现的功能哈哈
 
-## License
+更进一步说，借助 AI 除了收集文字资料，还可以收集图片和视频资料呀，这样我在了解世界各地发生的好玩的事情时，相关的图片也可以展示在我眼前，体验肯定会更好。或许可以在 v1.4.0 版本实现这个功能~
 
-Apache 2.0
-
+欢迎有感兴趣的小伙伴一起开发，也顺便可以治治我的拖延症嘿嘿😉
